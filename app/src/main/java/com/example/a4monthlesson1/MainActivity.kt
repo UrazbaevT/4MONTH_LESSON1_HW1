@@ -2,6 +2,7 @@ package com.example.a4monthlesson1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.a4monthlesson1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), CounterView{
@@ -33,4 +34,10 @@ class MainActivity : AppCompatActivity(), CounterView{
     override fun showNewCount(count: Int) {
         binding.resultTv.text = count.toString()
     }
+
+    override fun showToast(message: String) {
+        Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showColor(color: Int) = binding.resultTv.setTextColor(color)
 }
